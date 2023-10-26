@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="com.manager.appbanhangandroidjavaAdmin.MainActivity">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -15,6 +15,8 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_height="match_parent">
+
+
             <TextView
                 android:id="@+id/tvhi"
                 android:textSize="15sp"
@@ -73,6 +75,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:background="@color/black"
+                tools:listitem="@layout/item_sp_new"
+                android:id="@+id/rcvSpNew"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/container1" />
 
             <TextView
                 android:layout_marginTop="3dp"
@@ -84,17 +95,34 @@
                 android:textSize="15dp"
                 android:textStyle="bold"
                 />
-            <ListView
+
+         <!--   <LinearLayout
+                android:id="@+id/lvLoai"
                 app:layout_constraintTop_toBottomOf="@+id/tvCategories"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:background="@color/teal_700"
+                    >
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>-->
+            <ListView
+                app:layout_constraintTop_toBottomOf="parent"
                 android:id="@+id/lvLoai"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"/>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rcvSpNew"
-                app:layout_constraintTop_toBottomOf="@+id/lvLoai"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/layout1"
-    tools:context=".Screens.PayImmediatelyActivity">
+    tools:context="com.manager.appbanhangandroidjavaAdmin.Screens.PayImmediatelyActivity">
 
     <androidx.cardview.widget.CardView
         android:layout_marginTop="5dp"

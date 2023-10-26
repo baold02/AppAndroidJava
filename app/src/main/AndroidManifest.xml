@@ -16,13 +16,16 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".SearchActivity"
+            android:name=".Screens.ChatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Screens.SearchActivity"
             android:exported="false" />
         <activity
             android:name=".Screens.ViewHistoryActivity"
             android:exported="false" />
         <activity
-            android:name=".Screens.PayImmediatelyActivity"
+            android:name=".PayImmediatelyActivity"
             android:exported="false" />
         <activity
             android:name=".Screens.SiginActivity"
@@ -49,8 +52,16 @@
             android:name=".Screens.PhoneActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.manager.appbanhangandroidjavaAdmin.MainActivity"
             android:exported="true" />
+
+        <service
+            android:name=".service.FirebaseMessagerReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

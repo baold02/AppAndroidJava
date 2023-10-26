@@ -1,73 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".Screens.CartActivity">
+    tools:context="com.manager.appbanhangandroidjavaAdmin.Screens.CartActivity">
     
-    <TextView
-        android:id="@+id/tvGioHangTrong"
-        app:layout_constraintTop_toBottomOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:textStyle="bold"
-        android:visibility="gone"
-        android:text="Giỏ hàng trống"
-        android:gravity="center"
-        android:textSize="18sp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
-    
-    <Toolbar
-        android:id="@+id/toolbar"
-        app:layout_constraintTop_toBottomOf="parent"
-        android:title="Giỏ hàng"
-        android:background="#36DD07"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"/>
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcvCart"
-        android:layout_marginTop="10dp"
-        tools:listitem="@layout/item_cart"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+
+
+<!--    <Toolbar-->
+<!--        android:id="@+id/toolbar"-->
+<!--        app:layout_constraintTop_toBottomOf="parent"-->
+<!--        android:title="Giỏ hàng"-->
+<!--        android:background="#36DD07"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="?attr/actionBarSize"/>-->
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/rcvCart"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        tools:listitem="@layout/item_cart"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"/>-->
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/layout1"-->
+<!--        app:layout_constraintTop_toBottomOf="parent"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textSize="18sp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:text="Tổng tiền"-->
+<!--            android:textStyle="bold"/>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/tvTongTien"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textSize="18sp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:text="Tổng tiền"-->
+<!--            android:gravity="right"-->
+<!--            android:padding="5dp"-->
+<!--            android:layout_marginRight="20dp"-->
+<!--            android:textStyle="bold"/>-->
+
+<!--    </LinearLayout>-->
+
+<!--    <Button-->
+<!--        android:id="@+id/btnMuaHang"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/layout1"-->
+<!--        android:text="Mua Hàng"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"/>-->
     
     <LinearLayout
-        android:id="@+id/layout1"
-        app:layout_constraintTop_toBottomOf="parent"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:layout_weight="1"
-            android:text="Tổng tiền"
-            android:textStyle="bold"/>
+            android:orientation="horizontal">
+          <ImageView
+              android:id="@+id/imgBack"
+              android:padding="4dp"
+              android:src="@drawable/arrow"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="My Cart"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:textSize="25dp"
+                android:textStyle="bold"/>
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/tvTongTien"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/tvGioHangTrong"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textStyle="bold"
+            android:visibility="gone"
+            android:text="Giỏ hàng trống"
+            android:gravity="center"
             android:textSize="18sp"
-            android:layout_weight="1"
-            android:text="Tổng tiền"
-            android:gravity="right"
-            android:padding="5dp"
-            android:layout_marginRight="20dp"
-            android:textStyle="bold"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvCart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Order Summary"
+            android:layout_marginTop="16dp"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:background="@drawable/custom_edittex"
+            android:layout_height="200dp">
+            <TextView
+                android:id="@+id/tvSubtotal"
+                android:layout_width="55dp"
+                android:layout_height="27dp"
+                android:text="Subtotal"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/tvTongTien"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deli"
+               android:layout_marginTop="30dp"
+                app:layout_constraintStart_toStartOf="@+id/tvSubtotal"
+                app:layout_constraintTop_toTopOf="@+id/tvSubtotal"
+                />
+
+            <TextView
+                android:id="@+id/tv12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$"
+               android:layout_marginTop="30dp"
+                app:layout_constraintEnd_toEndOf="@+id/tvTongTien"
+                app:layout_constraintTop_toTopOf="@+id/tvTongTien"
+
+                />
+            
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_margin="8dp"
+                android:background="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv12"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnOrderNow"
+            android:text="Order Now"
+            android:background="@drawable/custom_edittex"
+            android:textSize="18dp"
+            android:layout_marginTop="32dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
-    
-    <Button
-        android:id="@+id/btnMuaHang"
-        app:layout_constraintTop_toBottomOf="@+id/layout1"
-        android:text="Mua Hàng"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
 
-</LinearLayout>
+</ScrollView>
